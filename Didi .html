@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Didi </title>
+    <link rel="stylesheet" href="../movies1.css">
+    <link rel="stylesheet" href="../movies2.css">
+</head>
+<body>
+    <h1 class="logo">Jeery Movie</h1>
+    <nav class="navbar">
+        <button class="menu-button" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links"  id="content">
+            <li><a href="#" onclick="handleClick('Home')">Home</a></li>
+            <li><a href="#" onclick="handleClick('Hollywood')">Hollywood</a></li>
+            <li><a href="#" onclick="handleClick('Bollywood')">Bollywood</a></li>
+            <li><a href="#" onclick="handleClick('Punjab')">Punjab</a></li>
+            <li><a href="#" onclick="handleClick('South')">South Movies</a></li>
+            <li><a href="#" onclick="handleClick('Web')">Web series</a></li>
+            <li><a href="#" onclick="handleClick('GENREs')">GENREs</a></li>
+            <li><a href="#" onclick="handleClick('More')">More</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Enter user name...">
+                <button onclick="searchUser()">Search</button>
+        </div>         
+    </nav>
+    <main class="main"><br><br>
+        <div class="image-grid">
+        <div class="image-column">
+            <a href="#" onclick="handleClick('Marco')"> <img src="3UCTNaZgxW6BbeHMMTe6uL07MpV.jpg" alt="Image 1">
+                <p>Dìdi (2024) BluRay [Hindi (ORG 2.0) & English] 4K 1080p 720p & 480p Dual Audio [x264/10Bit-HEVC] | Full Movie</p></a>
+        </div></div><br><br><hr><br><br>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Jeery  | All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Disclaimer</a></li>
+                <li><a href="#">Join Our Group !</a></li>
+                <li><a href="#">How To Download ?</a></li>
+                <li><a href="#">Movie Request Page</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+const clickCounts = {
+    Marco:0,
+    Home: 0,
+    Hollywood:0,
+    Bollywood:0,
+    Punjab:0,
+    South :0,
+    Web :0,
+    GENREs:0,
+    More:0,
+}
+function handleClick(page) {
+    clickCounts[page]++;
+
+    // Get the page content to display
+    const pageContent = document.getElementById(`${page}-page`);
+    if (page === 'Marco') {
+        if (clickCounts.Marco === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.Marco === 2) {
+            window.open('Didi.html', '_blank');
+            clickCounts.Marco = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'Home') {
+        if (clickCounts.Home === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.Home === 2) {
+            window.open('../index.html', '_blank');
+            clickCounts.Home = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'Hollywood') {
+        if (clickCounts.Hollywood === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.Hollywood === 2) {
+            window.open('../hollywood.html', '_blank');
+            clickCounts.Hollywood = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'Bollywood') {
+        if (clickCounts.Bollywood === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.Bollywood === 2) {
+            window.open('../bollywood.html', '_blank');
+            clickCounts.Bollywood = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'Punjab') {
+        if (clickCounts.Punjab === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.Punjab === 2) {
+            window.open('../Punjab.html', '_blank');
+            clickCounts.Punjab = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'South') {
+        if (clickCounts.South === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.South === 2) {
+            window.open('../south.html', '_blank');
+            clickCounts.South = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'Web') {
+        if (clickCounts.Web  === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.Web  === 2) {
+            window.open('../web.html', '_blank');
+            clickCounts.Web = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'GENREs') {
+        if (clickCounts.GENREs === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.GENREs === 2) {
+            window.open('movies.html', '_blank');
+            clickCounts.GENREs = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'More') {
+        if (clickCounts.More === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts.More === 2) {
+            window.open('movies.html', '_blank');
+            clickCounts.More = 0;  // Reset click count for Movies
+        }
+    }
+}
+function toggleMenu() {
+    const nav = document.getElementById('content');
+    nav.classList.toggle('show');
+  }
+    </script>
+    <script src="../search1.js"></script>
+</body>
+</html>

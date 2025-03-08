@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+#first-button{
+    background-color: blue;
+    width: 75%;
+}
+
+/* Position third button at the bottom */
+#third-button {
+    position: absolute;
+    bottom: 10px;
+    width: 200px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div onclick="handleClick('first')" id="first-button"> 
+            <h1>Please Click on  Continue Button to Verify Yourself !</h1>
+         <!-- First Button -->
+        <button id="first-button" onclick="startCountdown()">Click Me</button>
+        </div>
+
+        <!-- Countdown Display -->
+        <div id="countdown" style="display:none;"></div>
+<div onclick="handleClick('second')" id="second-container" style="display:none;">
+    <h1 id="text">Links Page is Almost Ready</h1>
+        <!-- Second Button -->
+        <button id="second-button"  onclick="showThirdButton() ">Second Button</button>
+</div>
+<div id="third-container" style="display:none;">
+    <p>Click in The Bottom</p>
+    <!-- Third Button -->
+    <button id="third-button"  onclick="handleClick('third')">Third Button</button>
+</div>
+    </div>
+
+    <script>
+         let countdownTimer;
+let countdown = 8;
+
+function startCountdown() {
+    // Hide the first button and show the countdown
+    document.getElementById('first-button').style.display = 'none';
+    document.getElementById('first-button').style.display = 'none';
+    document.getElementById('countdown').style.display = 'block';
+
+    countdownTimer = setInterval(function() {
+        // Display the current countdown value
+        document.getElementById('countdown').innerText = countdown;
+        countdown--;
+
+        // When countdown reaches 0
+        if (countdown < 0) {
+            clearInterval(countdownTimer);
+            document.getElementById('second-container').style.display = 'block'; // Show second button and text
+            document.getElementById('countdown').style.display = 'none'; // Hide countdown
+        }
+    }, 1000); // Update every second
+}
+
+function showThirdButton() {
+    // Hide the second button and text
+    document.getElementById('second-container').style.display = 'none';
+
+    // Show the third button and final text
+    document.getElementById('third-container').style.display = 'block';
+}
+const clickCounts = {
+  third:0,
+  first:0,
+  second:0,
+}
+function handleClick(page) {
+    clickCounts[page]++;
+
+    // Get the page content to display
+    const pageContent = document.getElementById(`${page}-page`);
+    if (page === 'third') {
+        if (clickCounts.third === 1) {
+            window.open("https://www.example.com", "_blank");
+        } else if (clickCounts. third === 2) {
+            window.open('eagle5.html', '_blank');
+            clickCounts.third = 0;  // Reset click count for Movies
+        }
+    }
+    if (page === 'first') {
+        if (clickCounts.first === 1) {
+            window.open("https://www.example.com", "_blank");
+
+            clickCounts.first = 1;  // Reset click count for Movies
+        }
+        if (page === 'second') {
+        if (clickCounts.second === 1) {
+            window.open("https://www.example.com", "_blank");
+
+            clickCounts.second = 1;  // Reset click count for Movies
+        }
+    }
+}
+}
+    </script>
+</body>
+</html>
